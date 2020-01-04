@@ -2,13 +2,15 @@ package pl.altkom.tests.aritmetics;
 
 import pl.altkom.tests.StringArithmetic;
 import pl.altkom.tests.exceptions.CalculatorException;
+import pl.altkom.tests.exceptions.ParseException;
+import pl.altkom.tests.exceptions.UnsupportedOperationException;
 
 public class IntegerArithmetic implements StringArithmetic {
     private int parse(String a) throws CalculatorException {
         try {
             return Integer.parseInt(a);
         } catch (NumberFormatException e) {
-            throw new CalculatorException("Cannot parse '" + a + "' as an integer number", e);
+            throw new ParseException("Cannot parse '" + a + "' as an integer number", e);
         }
     }
 
@@ -53,7 +55,7 @@ public class IntegerArithmetic implements StringArithmetic {
         double y = Math.log(x)/Math.log(2);
         double z = Math.floor(y);
         if (Math.abs(y - z) < 0.0000001) return String.valueOf((int)z);
-        else throw new CalculatorException("Result of logarithm is not integer number");
+        else throw new UnsupportedOperationException("Result of logarithm is not integer number");
     }
 
     @Override
@@ -62,6 +64,6 @@ public class IntegerArithmetic implements StringArithmetic {
         double y = Math.sqrt(x);
         double z = Math.floor(y);
         if (Math.abs(y - z) < 0.0000001) return String.valueOf((int)z);
-        else throw new CalculatorException("Result of square function is not integer number");
+        else throw new UnsupportedOperationException("Result of square function is not integer number");
     }
 }
