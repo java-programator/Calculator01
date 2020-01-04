@@ -2,7 +2,7 @@ package pl.altkom.tests;
 
 import pl.altkom.tests.exceptions.CalculatorException;
 
-public interface StringArithmetics {
+public interface StringArithmetic {
     String add(String a, String b) throws CalculatorException;
     String sub(String a, String b) throws CalculatorException;
     String mul(String a, String b) throws CalculatorException;
