@@ -95,7 +95,7 @@ public class Calculator {
         public String calculate() throws CalculatorException {
             StringArithmetic arithmetic = null;
             if ((a != null && a.contains(".")) ||
-                    (b != null || b.contains("."))) {
+                    (b != null && b.contains("."))) {
                 arithmetic = floatArithmetic;
             } else {
                 arithmetic = integerArithmetic;

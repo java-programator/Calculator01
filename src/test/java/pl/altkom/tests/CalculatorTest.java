@@ -25,4 +25,19 @@ public class CalculatorTest {
         verify(out, times(1)).put('4');
         verify(out, times(1)).put('\n');
     }
+
+    @Test
+    public void exceptionServingTest() throws CalculatorException {
+        Calculator c = new Calculator();
+        c.setFloatArithmetic(new FloatArithmetic());
+        c.setIntegerArithmetic(new IntegerArithmetic());
+        Input in = mock(Input.class);
+        c.setIn(in);
+        Output out = mock(Output.class);
+        c.setOut(out);
+
+        when(in.get()).thenThrow(CalculatorException.class);
+
+        c.calculateOneOperation();
+    }
 }

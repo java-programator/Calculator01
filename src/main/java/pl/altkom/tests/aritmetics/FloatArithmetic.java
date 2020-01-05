@@ -54,4 +54,9 @@ public class FloatArithmetic implements StringArithmetic {
     public String sqrt(String a) throws CalculatorException {
         return String.valueOf(Math.sqrt(parse(a)));
     }
+
+    @Override
+    public String cube(String a) throws CalculatorException {
+        return null;
+    }
 }
