@@ -41,7 +41,18 @@ public class IntegerArithmeticTest {
 
     @Test(expected = CalculatorException.class)
     public void testPersing() throws CalculatorException {
-        assertEquals("5", sa.add("4", "dupa"));
+        assertEquals("5", sa.add("4", "test"));
+    }
+
+    @Test(expected = CalculatorException.class)
+    public void testPersing2() throws CalculatorException {
+        sa.add("test", "4");
+    }
+
+    @Ignore
+    @Test
+    public void testAddBigNumber1() throws CalculatorException {
+        assertEquals("4000000000", sa.add("2000000000", "2000000000"));
     }
 
     @Ignore
@@ -50,5 +61,18 @@ public class IntegerArithmeticTest {
         for (int i = 0; i < 1_000_000_000; i++) {
             int a = i * i *i;
         }
+    }
+
+    @Test
+    public void testPrimeNumbers() throws CalculatorException {
+        assertTrue(sa.isPrime("2"));
+    }
+
+    @Test
+    public void testNotPrimeNumbers() throws CalculatorException {
+        assertFalse(sa.isPrime("4"));
+        assertFalse(sa.isPrime("6"));
+        assertFalse(sa.isPrime("8"));
+        assertFalse(sa.isPrime("9"));
     }
 }
