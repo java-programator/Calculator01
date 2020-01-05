@@ -66,4 +66,9 @@ public class IntegerArithmetic implements StringArithmetic {
         if (Math.abs(y - z) < 0.0000001) return String.valueOf((int)z);
         else throw new UnsupportedOperationException("Result of square function is not integer number");
     }
+
+    @Override
+    public String cube(String a) throws CalculatorException {
+        return String.valueOf(parse(a) * parse(a) * parse(a));
+    }
 }

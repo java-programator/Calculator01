@@ -11,4 +11,5 @@ public interface StringArithmetic {
     boolean isPrime(String a) throws CalculatorException;
     String log2(String a) throws CalculatorException;
     String sqrt(String a) throws CalculatorException;
+    String cube(String a) throws CalculatorException;
 }
