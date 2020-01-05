@@ -21,7 +21,7 @@ public class IntegerArithmetic implements StringArithmetic {
 
     @Override
     public String sub(String a, String b) throws CalculatorException {
-        return String.valueOf(Integer.parseInt(a) - Integer.parseInt(b));
+        return String.valueOf(parse(a) - parse(b));
     }
 
     @Override
